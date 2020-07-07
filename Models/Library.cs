@@ -16,6 +16,9 @@ namespace library.Models
       Books.Add(new Book("The Count of Monte Cristo", "Alexandre Dumas", 3));
       Books.Add(new Book("Basic Economics", "Thomas Sowell", 1));
       Books.Add(new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 8));
+      Books.Add(new Book("20,000 Leagues Under The Sea", "Jules Verne", 3));
+      Books.Add(new Book("War of the Worlds", "H.G. Wells", 2));
+      Books.Add(new Book("The Call of Cthulu", "H.P. Lovecraft", 1));
     }
 
     public void ViewBooks()

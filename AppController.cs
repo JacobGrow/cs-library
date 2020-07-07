@@ -9,6 +9,7 @@ namespace library
     public bool Running { get; private set; }
     public void Run()
     {
+    Console.BackgroundColor = ConsoleColor.DarkCyan;
       Console.Clear();
       Library = new Library("Boise, ID", "Jake's Books");
       Console.WriteLine($"\nWelcome to {Library.Name} in {Library.Location}");
