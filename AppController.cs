@@ -32,6 +32,7 @@ namespace library
         }
 
       }
+    }
       void CheckOut()
       {
         Console.Clear();
@@ -45,11 +46,29 @@ namespace library
            Console.WriteLine("Invalid Selection");
            return;
          }
-         
+         Console.WriteLine("How many copies does you want today?");
+         string input = Console.ReadLine();
+         int quantity;
+         bool valid = Int32.TryParse(input, out quantity);
+         if (!valid)
+         {
+           Console.WriteLine("Enter a number please");
+           return;
+         }
+         if (selectedBook.InStock >= quantity)
+         {
+           selectedBook.InStock -= quantity;
+           Console.WriteLine($"Thanks for checking out {quantity} books.");
+           return;
+         }
+         else 
+         {
+           Console.WriteLine($"We don't have that many.");
+           return;
+         }
       }
 
     }
   }
 
 
-}
