@@ -14,7 +14,8 @@ namespace library.Models
       Name = name;
 
       Books.Add(new Book("The Count of Monte Cristo", "Alexandre Dumas"));
-      
+      Books.Add(new Book("Basic Economics", "Thomas Sowell"));
+      Books.Add(new Book("The Fellowship of the Ring", "J.R.R. Tolkien"));
     }
 
     public void ViewBooks(bool available)
