@@ -7,10 +7,23 @@ namespace library.Models
     public string Name { get; set; }
     public string Location { get; set; }
 
+    public List<Book> Books { get; set; } = new List<Book>();
     public Library(string location, string name)
     {
       Location = location;
       Name = name;
+
+      Books.Add(new Book("The Count of Monte Cristo", "Alexandre Dumas"));
+      
+    }
+
+    public void ViewBooks(bool available)
+    {
+      Console.WriteLine("Book Stock");
+      for (int i = 0; i < Books.Count; i++)
+      {
+        Console.WriteLine($"{i + 1}");
+      }
     }
   }
 }
