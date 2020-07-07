@@ -38,7 +38,7 @@ namespace library
       {
         Console.Clear();
         Library.ViewBooks();
-        Console.WriteLine("These are the only books we have so either pick one or get outta here.");
+        Console.WriteLine("\nThese are the only books we have so either pick one or get outta here.");
          Console.WriteLine("------------------------------------------------------------");
          string selection = Console.ReadLine();
          Book selectedBook = Library.checkBookAvailability(selection);
@@ -47,25 +47,26 @@ namespace library
            Console.WriteLine("Invalid Selection");
            return;
          }
-         Console.WriteLine("How many copies does you want today?");
+         Console.WriteLine($"Are you sure you want to check out {selectedBook.Title}? (y/n)");
+
+         Console.WriteLine("------------------------------------------------------------");
          string input = Console.ReadLine();
-         int quantity;
-         bool valid = Int32.TryParse(input, out quantity);
-         if (!valid)
+         switch(input)
          {
-           Console.WriteLine("Enter a number please");
-           return;
-         }
+          case "y":
+         int quantity;
+         string checkedOutBook = "1";
+         bool valid = Int32.TryParse(checkedOutBook, out quantity);
+         
+      
          if (selectedBook.InStock >= quantity)
          {
            selectedBook.InStock -= quantity;
-           Console.WriteLine($"Thanks for checking out {quantity} books.");
+           Console.WriteLine($"Thanks for checking out {selectedBook.Title} by {selectedBook.Author}");
+           Console.WriteLine("------------------------------------------------------------");
            return;
          }
-         else 
-         {
-           Console.WriteLine($"We don't have that many.");
-           return;
+         break;
          }
       }
 
