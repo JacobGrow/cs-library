@@ -35,10 +35,17 @@ namespace library
       void CheckOut()
       {
         Console.Clear();
+        Library.ViewBooks();
         Console.WriteLine("These are the only books we have so either pick one or get outta here.");
-         Console.WriteLine("----------------------------------------------");
-         Library.ViewBooks();
+         Console.WriteLine("------------------------------------------------------------");
          string selection = Console.ReadLine();
+         Book selectedBook = Library.checkBookAvailability(selection);
+         if (selectedBook == null)
+         {
+           Console.WriteLine("Invalid Selection");
+           return;
+         }
+         
       }
 
     }
