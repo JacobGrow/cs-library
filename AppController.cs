@@ -17,13 +17,16 @@ namespace library
       Running = true;
       while (Running)
       {
-        Console.WriteLine("Would you like to check out a book? (y/n)");
-        Console.WriteLine("----------------------------------------------");
+        Console.WriteLine("What would you like to do? Books(b)/Magazines(m)/Leave(n)");
+        Console.WriteLine("---------------------------------------------------------------");
         string input = Console.ReadLine().ToLower();
         switch (input)
         {
-          case "y":
+          case "b":
             CheckOut();
+          break;
+          case "m":
+            CheckOutMagazine();
           break;
           case "n":
           Console.Clear();
@@ -68,7 +71,23 @@ namespace library
          }
          break;
          }
+
       }
+        void CheckOutMagazine()
+        {
+        Console.Clear();
+        Console.WriteLine("Would you like to check out a magazine?");
+        Library.ViewMagazines();
+        Console.WriteLine("------------------------------------");
+        Console.WriteLine("Pick Something");
+        Console.WriteLine("------------------------------------");
+        Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine("\nYou can't checkout magazines stupid.");
+        Console.WriteLine("------------------------------------");
+        
+
+        }
 
     }
   }
