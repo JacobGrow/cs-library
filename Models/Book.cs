@@ -3,18 +3,15 @@ using System.Collections.Generic;
 
 namespace library.Models
 {
-  public class Book
+  public class Book : Publication
   {
-    public string Title { get; set;}
-    public string Author { get; set; }
-    public int InStock { get; set; }
-    public bool Available { get { return InStock > 0; } }
-
-    public Book(string title, string author, int inStock)
-    {
-      Title = title;
-      Author = author;
-      InStock = inStock;
-    }
+    public string Genre { get; set; }
+    public int PageCount { get; set; }
+   
+  public Book( string genre, int pagecount, string title, string author, string description, int inStock) : base(title, author, description, inStock)
+  {
+    Genre = genre;
+    PageCount = pagecount;
+  }
   }
 }
