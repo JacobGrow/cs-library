@@ -9,6 +9,8 @@ namespace library.Models
 
     public List<Book> Books { get; set; } = new List<Book>();
     public List<Magazine> Magazines { get; set; } = new List<Magazine>();
+
+    public List<Bluray> Blurays { get; set; } = new List<Bluray>();
     public Library(string location, string name)
     {
       Location = location;
@@ -23,6 +25,9 @@ namespace library.Models
     
       Magazines.Add(new Magazine("Men's Health", "July 2020", "Health and Fitness", "Publisher Inc.", "Read if you wanna get ripped", 1));
       Magazines.Add(new Magazine("Computers/Tech", "June 2020", "National Programming", "Mag Publishers Inc.", "Read if you wanna look smart.", 1));
+
+      Blurays.Add(new Bluray("Steven Spielberg", 120, "Horror", "Jaws", 1980, "Shark totally eats a whole town", 3));
+      Blurays.Add(new Bluray("Christopher Nolan", 260, "Sci-Fi", "Interstellar", 2014, "Sick space stuff", 2));
     }
 
     public void ViewBooks()

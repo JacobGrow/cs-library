@@ -18,7 +18,7 @@ namespace library
       Running = true;
       while (Running)
       {
-        Console.WriteLine("What would you like to do? Books(b)/Magazines(m)/Leave(n)");
+        Console.WriteLine("What would you like to do? Books(b)/Magazines(m)/Blurays(bl)/Leave(n)");
         Console.WriteLine("---------------------------------------------------------------");
         string input = Console.ReadLine().ToLower();
         switch (input)
@@ -29,6 +29,9 @@ namespace library
           case "m":
             CheckOutMagazine();
           break;
+          case "bl":
+            // CheckOutBlurays();
+            break;
           case "n":
           Console.Clear();
             Console.WriteLine("Then what are you botherin me for?");
